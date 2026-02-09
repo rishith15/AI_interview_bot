@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-powered interview bot with real-time voice interaction and animated avatar">
+  <title>AI Interview Bot - Real-time Voice Interaction</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>🎭 AI Interview Bot</h1>
+      <p>Experience a natural conversation with AI-powered voice interaction</p>
+    </header>
+
+    <!-- Alert Container -->
+    <div id="alert-container"></div>
+
+    <!-- Loading Progress -->
+    <div id="loading-progress" class="loading-progress" style="display: none;">
+      <div class="loading-content">
+        <h3>🤖 Loading AI Model...</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 0%"></div>
+        </div>
+        <p id="loading-text">Initializing...</p>
+      </div>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="main-grid">
+
+      <!-- Left Column - Conversation Panel -->
+      <div class="glass-card conversation-panel">
+        <div class="conversation-header">
+          <h2>Conversation</h2>
+          <button id="clear-btn" class="clear-btn">Clear History</button>
+        </div>
+
+        <div id="messages" class="messages">
+          <!-- Messages will be added here dynamically -->
+        </div>
+
+        <!-- Quick Replies -->
+        <div id="quick-replies" class="quick-replies">
+          <!-- Quick reply chips will be added here -->
+        </div>
+      </div>
+
+      <!-- Right Column - Avatar & Controls -->
+      <div class="glass-card avatar-section">
+
+        <!-- Avatar Display -->
+        <div class="avatar-container">
+          <div class="avatar">
+            <div id="avatar-face" class="avatar-face idle">
+              🤖
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Indicator -->
+        <div id="status-indicator" class="status-indicator idle">
+          <div id="status-dot" class="status-dot"></div>
+          <span id="status-text">Ready to start</span>
+        </div>
+
+        <!-- Recording Indicator -->
+        <div id="recording-indicator" class="recording-indicator">
+          <div class="recording-dot"></div>
+          <span>🎤 Listening to your voice...</span>
+        </div>
+
+        <!-- Audio Visualizer -->
+        <div id="audio-visualizer" class="audio-visualizer">
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+          <div class="visualizer-bar"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <button id="start-btn" class="btn btn-primary">
+            🎤 Start Interview
+          </button>
+          <button id="stop-btn" class="btn btn-secondary" disabled>
+            ⏹️ Stop Interview
+          </button>
+        </div>
+
+        <!-- Settings Panel -->
+        <div class="settings-panel">
+          <h3>⚙️ Settings</h3>
+
+          <div class="setting-group">
+            <label for="interview-type-select">Interview Type</label>
+            <select id="interview-type-select">
+              <option value="general">General</option>
+              <option value="technical">Technical</option>
+              <option value="behavioral">Behavioral</option>
+            </select>
+          </div>
+
+          <div class="setting-group">
+            <label for="personality-select">Interviewer Personality</label>
+            <select id="personality-select">
+              <option value="professional">Professional</option>
+              <option value="friendly">Friendly</option>
+              <option value="casual">Casual</option>
+            </select>
+          </div>
+
+          <div class="setting-group">
+            <label for="voice-select">Voice</label>
+            <select id="voice-select">
+              <option>Loading voices...</option>
+            </select>
+          </div>
+
+          <button id="export-btn" class="btn btn-secondary" style="margin-top: 1rem;">
+            📥 Export Conversation
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Instructions Footer -->
+    <div class="glass-card" style="margin-top: 2rem; padding: 1.5rem;">
+      <h3 style="margin-bottom: 1rem;">📋 Quick Start Guide</h3>
+      <ol style="line-height: 1.8; color: var(--text-secondary);">
+        <li>Wait for the AI model to load (first time may take 30-60 seconds)</li>
+        <li>Select your interview type and personality preference</li>
+        <li>Click "Start Interview" and allow microphone access</li>
+        <li>Speak naturally - the AI will respond with voice and text</li>
+        <li>Use quick reply buttons for common responses</li>
+        <li>Export your conversation when done</li>
+      </ol>
+      <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+        💡 <strong>Note:</strong> This bot uses a local AI model that runs entirely in your browser. No API keys
+        required! The model is cached after first load for offline use.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Load JavaScript as ES6 modules -->
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

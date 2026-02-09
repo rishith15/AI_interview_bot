@@ -1,0 +1,31 @@
+# API Keys and Secrets
+*.env
+.env.local
+.env.production
+
+# API Key Storage
+api-keys.txt
+secrets.txt
+
+# Node modules (if added later)
+node_modules/
+package-lock.json
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
